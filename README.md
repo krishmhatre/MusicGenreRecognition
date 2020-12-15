@@ -19,6 +19,7 @@ There have been several projects successfully completed with the aim of classify
 ## 3. Dataset
 The project uses GTZAN Keras data as the primary dataset [^2]. The dataset consists of  1000 music tracks from 10 different genres (100 per genre) - rock, reggae, pop, metal, jazz, hiphop, disco, country, classical and blues. The format of the dataset is represented in Figure 3.1.
 
+ ![Music Genre Data](/images/data.png)
 
 Figure 3.1 - Dataset Structure
 
