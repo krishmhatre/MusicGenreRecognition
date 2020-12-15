@@ -30,19 +30,19 @@ The filenames of sound tracks in the dataset are imported using “pathlib” li
 ### 4.2 Data Preprocessing
 The audio binaries obtained previously are then decoded using Tensorflow to get audio signals. These audio signals are represented in Figure 4.2.
 
-![Audio](https://github.com/krishmhatre/MusicGenreRecognition/tree/main/Images/waves.png)
+![Audio](https://github.com/krishmhatre/MusicGenreRecognition/blob/main/Images/waves.png)
 
 Figure 4.2 - Audio Waves
 
 These audio waves are converted into Numpy arrays and are made uniform in length by padding with zeros. The uniform length arrays are passed through a Short-Time Fourier Transform using Librosa library as shown in Equation ## [^7]. 
 
-![STFT](https://github.com/krishmhatre/MusicGenreRecognition/tree/main/Images/stft.png)
+![STFT](https://github.com/krishmhatre/MusicGenreRecognition/blob/main/Images/stft.png)
  
 Equation 4.2 [^7]
 
 These 2-Dimensional arrays of shape 1025 x 1320 are then converted into absolute values. Now these amplitude spectrograms are converted to dB-scaled spectrograms using Librosa library. These spectrograms are further normalized and scaled between 0 and 1. The resulting spectrograms are represented by Figure 4.3.
 
-![Spectrogram](https://github.com/krishmhatre/MusicGenreRecognition/tree/main/Images/spec.png)
+![Spectrogram](https://github.com/krishmhatre/MusicGenreRecognition/blob/main/Images/spec.png)
 
 Figure 4.3 - Spectrograms
 
@@ -115,14 +115,14 @@ The fourth model trained was a Convolutional-Recurrent Neural Network (CRNN). Th
 ### 4.4 Training the Models
 All of the four models were compiled and trained in the same way. Adam optimizer with a learning rate 0.001 was used along with Sparse Categorical Cross-entropy as the loss function. The accuracy metric was used for training and validation. All the models were trained for 100 epochs (except for 2D-CNN which was trained for 50 epochs) with a validation split of 20%. The training results are represented in Figure 4.4.
 
-![Training](https://github.com/krishmhatre/MusicGenreRecognition/tree/main/Images/train.png)
+![Training](https://github.com/krishmhatre/MusicGenreRecognition/blob/main/Images/train.png)
  
 Figure 4.4 - Training Results
 
 ## 5. Results
 Each model is tested using 300 music files. These files are preprocessed in the same way as the training files. These audio signals are used to predict numerical labels. These numerical labels are inverse transformed to get the original label name using the previously saved LabelEncoder. Performance of the models are analyzed using a Confusion matrix of predictions and true values for each model. Figure 5.1 shows confusion matrix for each model. 
 
-![Confusion Matrix](https://github.com/krishmhatre/MusicGenreRecognition/tree/main/Images/matrix.png)
+![Confusion Matrix](https://github.com/krishmhatre/MusicGenreRecognition/blob/main/Images/matrix.png)
 
 Figure 5.1 - Confusion Matrix
 
