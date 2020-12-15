@@ -13,10 +13,10 @@ As the digital music industry continues to grow rapidly, the demand for better s
 The digital music industry achieved skyrocketing growth over the past decade, especially in the United States. An average digital music user in the US is estimated to spend $50.47 annually on streaming music by 2022 [1]. Also the number of such users is projected to reach 168 million by 2022 [^1]. As the industry continues to grow, the market is estimated to get more competitive. Current major players in this industry include Youtube Music, Amazon Prime Music, Apple Music, Spotify, Deezer, iHeartRadio, Pandora, SoundCloud and Tidal. As the competition gets more intense, the need for providing the best user experience increases tremendously. An application that provides better search results and recommendations will certainly have an edge over its competitors. Some of these music applications like Youtube Music and SoundCloud allow anyone to upload their music, which makes it difficult to provide efficient recommendation and search results. In order to automate such a process, there is a need for an efficient genre recognition system and automated tag generation system right at the time of upload. This project was aimed to develop an automated genre recognition system using deep neural networks. 
 
 ## 2. Related Work
-There have been several projects successfully completed with the aim of classifying the genre of a music file. The most basic way to solve this problem is using K-Nearest Neighbors [3]. There have been projects which combine basic machine learning algorithms (GDA, Random Forests and SVMs) with neural networks [4]. But most of the previously done related projects use deep neural networks. These projects use two general ways for classification - Feature extraction and Spectrogram analysis. Feature extraction algorithm uses features like MFCC, Spectral Centroid, Chroma and Spectral Contrast for classification [5]. Spectrogram Analysis uses decibel-scaled spectrogram images for classification. 
+There have been several projects successfully completed with the aim of classifying the genre of a music file. The most basic way to solve this problem is using K-Nearest Neighbors [^3]. There have been projects which combine basic machine learning algorithms (GDA, Random Forests and SVMs) with neural networks [^4]. But most of the previously done related projects use deep neural networks. These projects use two general ways for classification - Feature extraction and Spectrogram analysis. Feature extraction algorithm uses features like MFCC, Spectral Centroid, Chroma and Spectral Contrast for classification [^5]. Spectrogram Analysis uses decibel-scaled spectrogram images for classification. 
 
 ## 3. Dataset
-The project uses GTZAN Keras data as the primary dataset [2]. The dataset consists of  1000 music tracks from 10 different genres (100 per genre) - rock, reggae, pop, metal, jazz, hiphop, disco, country, classical and blues. The format of the dataset is represented in Figure 3.1.
+The project uses GTZAN Keras data as the primary dataset [^2]. The dataset consists of  1000 music tracks from 10 different genres (100 per genre) - rock, reggae, pop, metal, jazz, hiphop, disco, country, classical and blues. The format of the dataset is represented in Figure 3.1.
 
 
 Figure 3.1 - Dataset Structure
@@ -30,9 +30,9 @@ The audio binaries obtained previously are then decoded using Tensorflow to get 
 
 Figure 4.2 - Audio Waves
 
-These audio waves are converted into Numpy arrays and are made uniform in length by padding with zeros. The uniform length arrays are passed through a Short-Time Fourier Transform using Librosa library as shown in Equation ## [7]. 
+These audio waves are converted into Numpy arrays and are made uniform in length by padding with zeros. The uniform length arrays are passed through a Short-Time Fourier Transform using Librosa library as shown in Equation ## [^7]. 
 
-Equation 4.2 ^[7]
+Equation 4.2 [^7]
 
 These 2-Dimensional arrays of shape 1025 x 1320 are then converted into absolute values. Now these amplitude spectrograms are converted to dB-scaled spectrograms using Librosa library. These spectrograms are further normalized and scaled between 0 and 1. The resulting spectrograms are represented by Figure 4.3.
 
@@ -118,7 +118,7 @@ Each model is tested using 300 music files. These files are preprocessed in the 
 Figure 5.1 - Confusion Matrix
 
 ## 6. Conclusions
-Music genre recognition using deep learning is efficient enough using Spectrogram Analysis. The validation accuracy for all models might not align with the expected results but the analysis of predictions using a confusion matrix shows that most of the results are aligned with the expectations. Based on current models, 1-dimensional Convolutional Neural Network is the most efficient model of genre classifier. Convolutional-Recurrent Neural Network (CRNN) might be more efficient in the Feature Extraction method [5]. 2-dimensional Convolutional Network might be fine-tuned further to get better performance. Genre recognition could be made highly efficient by combining this spectrogram analysis method with feature extraction [6]. 
+Music genre recognition using deep learning is efficient enough using Spectrogram Analysis. The validation accuracy for all models might not align with the expected results but the analysis of predictions using a confusion matrix shows that most of the results are aligned with the expectations. Based on current models, 1-dimensional Convolutional Neural Network is the most efficient model of genre classifier. Convolutional-Recurrent Neural Network (CRNN) might be more efficient in the Feature Extraction method [^5]. 2-dimensional Convolutional Network might be fine-tuned further to get better performance. Genre recognition could be made highly efficient by combining this spectrogram analysis method with feature extraction [^6]. 
 
 ## References
 
