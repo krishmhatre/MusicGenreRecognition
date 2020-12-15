@@ -1,7 +1,8 @@
 # Music Genre Recognition
 
-Krish Hemant Mhatre <kmhatre@iu.edu>
+Krish Hemant Mhatre 
 
+<kmhatre@iu.edu>
 
 Indiana University
 
